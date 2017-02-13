@@ -1,0 +1,1 @@
+{"type":"success","value":{"id":11,"quote":"I have two hours today to build an app from scratch. @springboot to the rescue!"}}

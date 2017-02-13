@@ -1,5 +1,7 @@
 package web;
 
+import hello.EmQuote;
+import hello.Quote;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,6 +32,11 @@ public class DemoController {
     @RequestMapping(value = "/submit",method = RequestMethod.POST)
     public String submit() {
         RestTemplate restTemplate = new RestTemplate();
+        String url="http://gturnquist-quoters.cfapps.io/api/random";
+        Object o = restTemplate.getForObject(url,Object.class);
+        Quote q=restTemplate.getForObject(url, Quote.class);
+        EmQuote emQuote=restTemplate.getForObject(url,EmQuote.class);
+        System.out.println(q);
         return "nfirs-opt3-incident-details";
     }
 }

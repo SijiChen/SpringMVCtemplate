@@ -2,6 +2,8 @@ package web;
 
 import hello.EmQuote;
 import hello.Quote;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,8 +15,10 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class DemoController {
 
+    public static Logger logger= LogManager.getLogger(DemoController.class);
     @RequestMapping(value = "/nfirs-opt3-home-state",method = RequestMethod.GET)
     public String login() {
+        logger.info("test log into");
         return "nfirs-opt3-home-state";
     }
 
